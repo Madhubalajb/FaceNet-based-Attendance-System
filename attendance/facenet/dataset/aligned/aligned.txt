@@ -1,0 +1,1 @@
+Create folders for each students and name the folders with the respective student's names. The align_dataset_mtcnn.py program will align the raw images of students and store it in their respective folders.
