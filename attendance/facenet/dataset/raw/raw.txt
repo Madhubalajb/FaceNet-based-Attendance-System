@@ -1,0 +1,1 @@
+Create the folders in respect to the number of students, name the folders with the respective student's name. And store the required no of raw images of that students.
