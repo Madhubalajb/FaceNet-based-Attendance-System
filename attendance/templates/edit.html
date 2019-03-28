@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="content-section">
+		<form method="POST" action="">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">Edit The Existing Class</legend>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						{{ form.classname.label(class="form-control-label") }}
+							{% if form.classname.errors %}
+								{{ form.classname(class="form-control is-invalid") }}
+								<div class="invalid-feedback">
+									{% for error in form.classname.errors %}
+										<span>{{ error }}</span>
+									{% endfor %}
+								</div>
+							{% else %}
+								{{ form.classname(class="form-control") }}	
+							{% endif %}
+					</div>
+					<div class="form-group col-md-4">
+						{{ form.students.label(class="form-control-label") }}
+							{% if form.students.errors %}
+								{{ form.students(class="form-control is-invalid") }}
+								<div class="invalid-feedback">
+									{% for error in form.students.errors %}
+										<span>{{ error }}</span>
+									{% endfor %}
+								</div>	
+							{% else %}
+								{{ form.students(class="form-control") }}
+							{% endif %}
+					</div>
+					<div class="col-md-2">
+						<button class="btn btn-secondary" onclick="addFields()" id="ins" type="submit" name="ins" style="margin-top:32px;">Insert Student Fields</button>
+					</div>
+
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						{{ form.coordinator.label(class="form-control-label") }}
+							{% if form.coordinator.errors %}
+								{{ form.coordinator(class="form-control is-invalid") }}
+								<div class="invalid-feedback">
+									{% for error in form.coordinator.errors %}
+										<span>{{ error}}</span>
+									{% endfor %}
+								</div>
+							{% else %}	
+								{{ form.coordinator(class="form-control") }}
+							{% endif %}
+					</div>
+					<div class="form-group col-md-6">
+						{{ form.co_email.label(class="form-control-label") }}
+						{% if form.co_email.errors %}
+							{{ form.co_email(class="form-control is-invalid") }}
+							<div class="invalid-feedback">
+								{% for error in form.co_email.errors %}
+								<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.co_email(class="form-control") }}
+						{% endif %}	
+					</div>
+				</div>
+
+				<div id="pre"></div>
+
+				<div class="form-row" id="insert">
+					<div class="form-group col-md-4">
+						{{ form.stuname.label(class="form-control-label") }}
+						{% if form.stuname.errors %}
+							{{ form.stuname(class="form-control is-invalid") }}
+							<div class="invalid-feedback">
+								{% for error in form.stuname.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}	
+							</div>
+						{% else %}
+							{{ form.stuname(class="form-control") }}
+						{% endif %}	
+					</div>
+					<div class="form-group col-md-4">
+						{{ form.mobile_no.label(class="form-control-label") }}
+						{% if form.mobile_no.errors %}
+							{{  form.mobile_no(class="form-control is-invalid") }}
+							<div class="invalid-feedback">
+								{% for error in form.mobile_no.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.mobile_no(class="form-control") }}
+						{% endif %}
+					</div>							
+					<div class="form-group col-md-4">
+						{{ form.regno.label(class="form-control-label") }}
+						{% if form.regno.errors %}
+							{{  form.regno(class="form-control is-invalid") }}
+							<div class="invalid-feedback">
+								{% for error in form.regno.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.regno(class="form-control") }}
+						{% endif %}
+					</div>
+				</div>
+								
+			</fieldset>
+			<div class="form-group">
+				{{ form.submit(class="btn btn-outline-info") }}
+			</div>
+		</form>
+	</div>
+	<script>
+		function addFields()
+		{
+			var number = document.getElementById("students").value;
+			for(i=1;i<number;i++)
+			{
+			var itm = document.getElementById("insert")
+  			var cln = itm.cloneNode(true);
+  			document.getElementById("pre").appendChild(cln);				
+			}
+		}
+	</script>
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+			 <div class="text-center pt-3">
+				<h2 style="color:#107db1;">Valliammai Engineering College</h2>
+				<h3 class="pt-1" style="color:#107db1;">Department of Computer Science And Engineering</h3>
+				<h4 class="pt-1" style="color:#107db1;">Video Surveillance based Self Attendance System</h4>
+			</div>
+			<div class="container custom">
+				<div class="row mt-5 custom" style="width:50%;">
+					<div class="col m-2 card">
+						<img class="card-img-top mt-2" src="{{ url_for('static', filename='add.png') }}"  alt="Card image cap">
+						<a class="card-body text-center" style="max-width:150px;padding:20px;" href="{{ url_for('add') }}">Add A New Class</a>
+					</div>	
+					<!--<div class="col m-2 card">
+						<img class="card-img-top mt-2" src="{{ url_for('static', filename='edit.png') }}"  alt="Card image cap">
+						<a class="card-body text-center" style="max-width:150px;padding:20px;" href="{{ url_for('edit') }}">Edit The Existing Class</a>
+					</div>-->
+					<div class="col m-2 card">	
+						<img class="card-img-top mt-2" src="{{ url_for('static', filename='take_1.png') }}"  alt="Card image cap">
+						<a class="card-body text-center" style="max-width:150px;padding:20px;" href="{{ url_for('take') }}">Take Attendance</a>
+					</div>	
+				</div>
+			</div>	
+{% endblock content %}	

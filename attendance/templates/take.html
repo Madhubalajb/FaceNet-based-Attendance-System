@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="row" style="margin-top: 150px;">
+		<form class="col-md-4" style="margin-top: 10px;">
+            <label for="input-file">Image</label>
+            <input type="file" id="recognize" accept="image/*">
+ 		</form>
+
+ 		<div class="col-md-4">
+ 			<button class="btn btn-info btn-lg" id="recognize" type="submit">Recognize Students</button>
+ 		</div>
+ 			
+		<div class="col-md-4">
+			<button class="btn btn-info btn-lg" id="mark" type="submit">Mark Attendance</button>
+		</div>
+	<!-- 
+		<div class="col-md-2">
+			<button class="btn btn-info btn-lg" id="sms" type="submit">Send SMS</button>
+        </div>	 -->			
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>   
+	<script type="text/javascript">
+		$("#recognize").click(function(){
+		    formdata = new FormData();      
+		    $('input[type="file"]').on("change", function() {
+		        var fileName = this.files[0];
+		        alert('The file "' + fileName +  '" has been selected.');
+		        if (formdata) {
+		            formdata.append("image", fileName);
+		            $.ajax({
+		                url: "{{ url_for('face_recog') }}",
+		                type: "POST",
+		                data: formdata,
+		                processData: false,
+		                contentType: false,
+		                async: false,
+		                success:function(){}
+		            });
+		        }                       
+		    }); 
+
+		});
+
+		// $("#mark").click(function(){  
+		//     $.ajax({
+		//     	dataType: 'json',
+		//     	type:'POST',
+		//     	url: "{{ url_for('mark') }}",
+		// });
+		// });
+
+		$("#sms").click(function(){ 
+		    $.ajax({
+		    	dataType: 'json',
+		    	type:'POST',
+		    	url: "{{ url_for('sms') }}",
+		});
+		});				  
+    </script>	
+{% endblock content %}
+	
