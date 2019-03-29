@@ -19,5 +19,5 @@ For installing the packages use ```pip install ```command.
 ### Step 1: Dataset Preparation
 The required number of images (atleast 10) for each students should be collected and stored in seperate folders. The folders should be named in the respective students name. The path to folders can be like```Root_folder/attendance/facenet/dataset/raw/```
 
-![raw_folder](https://user-images.githubusercontent.com/26355166/55207276-78ff0500-51ff-11e9-95a1-2cdf23da4222.png)
+
 ### Step 2: Face Detection and Alignment
