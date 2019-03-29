@@ -24,11 +24,18 @@ The required number of images (atleast 10) for each students should be collected
 Here the MTCNN face detection algorithm is used. It takes ```Root_folder/attendance/facenet/dataset/raw/``` as input and ```Root_folder/attendance/facenet/dataset/aligned/``` as output. Basically, it detects the faces, aligns face region of each image and store it in the aligned directory.
 
 Run the following commands in the command prompt.</br>
-```python facenet/src/align/align_dataset_mtcnn.py facenet/dataset/raw facenet/dataset/aligned --image_size 160 --margin 32```
-![aligned_folder](https://user-images.githubusercontent.com/26355166/55208758-65ef3380-5205-11e9-9528-edaa81f31b10.png)
+```python attendance/facenet/src/align/align_dataset_mtcnn.py attendance/facenet/dataset/raw attendance/facenet/dataset/aligned --image_size 160 --margin 32```
+
+
 ![aligned_faces](https://user-images.githubusercontent.com/26355166/55208772-730c2280-5205-11e9-928d-475c07118af4.png)
 
 ### Step 3: Training The Faces
+The output dataset from Step 2 are fed into the Support Vector Machine classifier which generates a 512 dimensional embedding vector for faces of each students and trains the classifier on the generated vectors.
+Run the following commands in the command prompt.</br>
+```>>> python attendance/facenet/src/classifier.py TRAIN attendance/facenet/dataset/aligned attendance/facenet/src/20180402-114759/  attendance/facenet/src/20180402-114759/my_classifier.pkl --batch_size 1000 --min_nrof_images_per_class 10  --nrof_train_images_per_class 10 --use_split_dataset```
+### Step 4: Run the Web Application
+Now run the Web application by ```python run.py``` 
+    
 
 
 
