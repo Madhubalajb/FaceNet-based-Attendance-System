@@ -135,7 +135,7 @@ def face_recog():
 	worksheet.write('B2', 'Absent')
 	worksheet.write('B3', 'Absent')
 	worksheet.write('B4', 'Absent')
-	worksheet.write('B5', 'Present')
+	worksheet.write('B5', 'Absent')
 
 	with tf.Graph().as_default():
 		gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.6)
@@ -237,8 +237,6 @@ def face_recog():
 				for name in names: 
 					if value == name:
 						worksheet.write_string(i,j+1,'Present') 
-					else:
-						worksheet.write_string(i,j+1, 'Absent')	
 
 		cv2.imshow('Image', frame)
 		cv2.imwrite('output/'+img_path.split('/')[-1],frame)
