@@ -16,12 +16,12 @@ The following things needs to be installed properly in your machine.
 
 For installing the packages use ```pip install ```command.
 ## How to use
-### Step 1: Dataset Preparation
+### Step 1: Prepare Dataset
 The required number of **images** (atleast 10) for each students should be collected and stored in seperate folders. The folders should be named in the respective students name. The path to folders can be ```Root_folder/attendance/facenet/dataset/raw/```
 
 ![raw_folder](https://user-images.githubusercontent.com/26355166/55208071-c2048880-5202-11e9-883a-b1d6f2d5ee61.png)
 
-### Step 2: Face Detection and Alignment
+### Step 2: Detect and Align Faces
 Here the **MTCNN face detection algorithm** is used. It takes ```Root_folder/attendance/facenet/dataset/raw/``` as input and returns ```Root_folder/attendance/facenet/dataset/aligned/``` as output. Basically, it detects the faces, aligns face region of each image and store it in the aligned directory.
 
 Run the following command in the command prompt.</br>
