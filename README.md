@@ -21,3 +21,9 @@ The required number of images (atleast 10) for each students should be collected
 
 ![raw_folder](https://user-images.githubusercontent.com/26355166/55208071-c2048880-5202-11e9-883a-b1d6f2d5ee61.png)
 ### Step 2: Face Detection and Alignment
+Here the MTCNN face detection algorithm is used. It takes```Root_folder/attendance/facenet/dataset/raw/``` as input and```Root_folder/attendance/facenet/dataset/aligned/``` as output. Basically, it detects the faces, aligns face region of each image and store it in the aligned directory.
+Run the following commands in the command prompt.
+```python facenet/src/align/align_dataset_mtcnn.py facenet/dataset/raw facenet/dataset/aligned --image_size 160 --margin 32```
+### Step 3: Training The Faces
+
+
