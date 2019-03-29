@@ -41,8 +41,8 @@ Run the following commands in the command prompt.</br>
 Now run the Web application by ```$ python run.py``` It will show a localhost address like **http://127.0.0.1:5000/** which will be the URL for the Web App.
     
 ## References
-[1]: (https://github.com/davidsandberg/facenet)
-[2]: (https://github.com/AISangam/Facenet-Real-time-face-recognition-using-deep-learning-Tensorflow)
-[3]: (https://github.com/abhijeet3922/Face_ID)
+1. (https://github.com/davidsandberg/facenet)
+2. (https://github.com/AISangam/Facenet-Real-time-face-recognition-using-deep-learning-Tensorflow)
+3. (https://github.com/abhijeet3922/Face_ID)
 
 
