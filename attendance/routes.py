@@ -119,6 +119,7 @@ def face_recog():
 	if request.method == "POST":
 		file=request.files["image"]
 		filename = secure_filename(file.filename)
+	names = []	
 	img_name=str(filename)	
 	img_path="attendance/facenet/dataset/test-images/"+img_name
 	modeldir = "attendance/facenet/src/20180402-114759/"
@@ -131,11 +132,6 @@ def face_recog():
 	conn = sqlite3.connect('C:\\Users\\Dell\\Attendance\\attendance\\site.db')
 	c = conn.cursor()
 	students = c.execute("SELECT stuname FROM 'add'")
-	worksheet.write('B1', 'Absent')
-	worksheet.write('B2', 'Absent')
-	worksheet.write('B3', 'Absent')
-	worksheet.write('B4', 'Absent')
-	worksheet.write('B5', 'Absent')
 
 	with tf.Graph().as_default():
 		gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.6)
@@ -222,7 +218,6 @@ def face_recog():
 					text_y = bb[i][3] + 20
 					#print('Result Indices: ', best_class_indices[0])
 					print(HumanNames[best_class_indices[0]])
-					names = []
 					names.append(HumanNames[best_class_indices[0]])
 					for H_i in HumanNames:
 						if HumanNames[best_class_indices[0]] == H_i and best_class_probabilities > 0.43:
@@ -231,17 +226,23 @@ def face_recog():
 			else:
 				print('Unable to align')
 
-		for i, row in enumerate(students):
-			for j, value in enumerate(row):
-				worksheet.write_string(i,j, str(value))
-				for name in names: 
-					if value == name:
-						worksheet.write_string(i,j+1,'Present') 
+	for i, row in enumerate(students):
+		for j, value in enumerate(row):
+			worksheet.write_string(i,j+2,'Absent')
+			for name in names:
+				if name == value:
+					worksheet.write_string(i,j+2,'Present') 
+			worksheet.write_string(i,j, str(value))	
 
-		cv2.imshow('Image', frame)
-		cv2.imwrite('output/'+img_path.split('/')[-1],frame)
-		if cv2.waitKey(9000) & 0xFF == ord('q'):
-			sys.exit("Thanks")
+	# reg_no = c.execute("SELECT regno FROM 'add'")
+	# for i, row in enumerate(reg_no):
+	# 	for j, value in enumerate(row):
+	# 		worksheet.write(i,j+1,value)
+
+	cv2.imshow('Image', frame)
+	cv2.imwrite('output/'+img_path.split('/')[-1],frame)
+	if cv2.waitKey(9000) & 0xFF == ord('q'):
+		sys.exit("Thanks")
 	workbook.close()		
 	cv2.destroyAllWindows() 
 	flash('The students faces were recognized successfully!','success')
