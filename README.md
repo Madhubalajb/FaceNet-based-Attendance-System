@@ -1,5 +1,5 @@
 # Self-Attendance-System
-A Web Application for marking attendance of students by recognizing the student's faces from the surveillance video footage of classroom.
+A Deep Learning based Web Application for marking attendance of students by recognizing the student's faces from the surveillance video footage of classroom.
 ## Getting Started
 A Web Application in Python for recognizing student's faces in a classroom from the surveillance video and marking the attendance in an Excel Sheet. Deep learning algorithms like **MTCNN** and **FaceNet** are used for **face detection** and **recognition** respectively. And using the **Flask framework**, the Web App was created.
 ## Prerequisites
