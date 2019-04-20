@@ -1,7 +1,13 @@
 # Self-Attendance-System
-A Deep Learning based Web Application for marking attendance of students by recognizing the student's faces from the surveillance video footage of classroom.
+A **Deep Learning** based Web Application for marking attendance of students by recognizing the student's faces from the surveillance video footage of classroom.
+
 ## Getting Started
 A Web Application in Python for recognizing student's faces in a classroom from the surveillance video and marking the attendance in an Excel Sheet. Deep learning algorithms like **MTCNN** and **FaceNet** are used for **face detection** and **recognition** respectively. And using the **Flask framework**, the Web App was created.
+
+## Algorithms Used
+- MTCNN (Multi-Task Cascaded Convolutional Neural Networks)
+- FaceNet
+
 ## Prerequisites
 The following things needs to be installed properly in your machine.
 - Tensorflow
@@ -41,8 +47,8 @@ Run the following commands in the command prompt.</br>
 Now run the Web application by ```$ python run.py``` It will show a localhost address like **http://127.0.0.1:5000/** which will be the URL for the Web App.
     
 ## References
-1. (https://github.com/davidsandberg/facenet)
-2. (https://github.com/AISangam/Facenet-Real-time-face-recognition-using-deep-learning-Tensorflow)
-3. (https://github.com/abhijeet3922/Face_ID)
+1. https://github.com/davidsandberg/facenet
+2. https://github.com/AISangam/Facenet-Real-time-face-recognition-using-deep-learning-Tensorflow
+3. https://github.com/abhijeet3922/Face_ID
 
 
