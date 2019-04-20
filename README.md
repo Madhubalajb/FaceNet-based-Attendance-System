@@ -1,5 +1,5 @@
 # Self-Attendance-System
-A **Deep Learning** based Web Application for marking attendance of students by recognizing the student's faces from the surveillance video footage of classroom.
+> A **Deep Learning** based Web Application for marking attendance of students by recognizing the student's faces from the surveillance video footage of classroom.
 
 ## Getting Started
 A Web Application in Python for recognizing student's faces in a classroom from the surveillance video and marking the attendance in an Excel Sheet. Deep learning algorithms like **MTCNN** and **FaceNet** are used for **face detection** and **recognition** respectively. And using the **Flask framework**, the Web App was created.
@@ -32,7 +32,9 @@ Here the **MTCNN face detection algorithm** is used. It takes `Root_folder/atten
 
 Run the following command in the command prompt.</br>
 ```
-$ python attendance/facenet/src/align/align_dataset_mtcnn.py attendance/facenet/dataset/raw attendance/facenet/dataset/aligned --image_size 160 --margin 32
+$ python attendance/facenet/src/align/align_dataset_mtcnn.py 
+attendance/facenet/dataset/raw attendance/facenet/dataset/aligned 
+--image_size 160 --margin 32
 ```
 
 ![aligned_folder](https://user-images.githubusercontent.com/26355166/55209252-9e900c80-5207-11e9-8964-ef9a09a50fc1.png)
@@ -44,7 +46,10 @@ The output dataset from **Step 2** are fed into the **Support Vector Machine cla
 
 Run the following commands in the command prompt.</br>
 ```
-$ python attendance/facenet/src/classifier.py TRAIN attendance/facenet/dataset/aligned attendance/facenet/src/20180402-114759/  attendance/facenet/src/20180402-114759/my_classifier.pkl --batch_size 1000 --min_nrof_images_per_class 10  --nrof_train_images_per_class 10 --use_split_dataset
+$ python attendance/facenet/src/classifier.py TRAIN 
+attendance/facenet/dataset/aligned attendance/facenet/src/20180402-114759/  
+attendance/facenet/src/20180402-114759/my_classifier.pkl 
+--batch_size 1000 --min_nrof_images_per_class 10  --nrof_train_images_per_class 10 --use_split_dataset
 ```
 
 ### Step 4: Run the Web Application
