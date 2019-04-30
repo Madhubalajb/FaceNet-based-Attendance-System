@@ -52,9 +52,19 @@ attendance/facenet/src/20180402-114759/my_classifier.pkl
 --batch_size 1000 --min_nrof_images_per_class 10  --nrof_train_images_per_class 10 --use_split_dataset
 ```
 
-### Step 4: Run the Web Application
+### Step 4: Report folder
+Create an empty folder named **Reports**. This is for storing the **Excel sheets report of the attendance**, which is automatically generated when the Facenet algorithm recognizes the students. This is implemented using **XlsxWriter Python module**.
+
+### Step 5: Running the Web Application
 Now run the Web application by `$ python run.py` It will show a localhost address like `http://127.0.0.1:5000/` which will be the URL for the Web App.
-    
+
+### Step 6: Storing Data
+While running the application, it redirects to the Home page. On that page, there is an **Add class details** hyperlink. Basically it asks the user to enter the student's details. The provided details are stored in the **Sqlite Database**.
+> Note: The **Name** of each students entered should be the same as the **name of the student's dataset** created in **step 1**. 
+
+## Result
+
+
 ## References
 - https://github.com/davidsandberg/facenet
 - https://github.com/AISangam/Facenet-Real-time-face-recognition-using-deep-learning-Tensorflow
