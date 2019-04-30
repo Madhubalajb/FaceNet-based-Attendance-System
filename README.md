@@ -1,4 +1,4 @@
-# Self-Attendance-System
+# FaceNet based Attendance System
 > A **Deep Learning** based Web Application for marking attendance of students by recognizing the student's faces from the surveillance video footage of classroom.
 
 ## Getting Started
