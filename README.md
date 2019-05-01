@@ -21,6 +21,7 @@ The following things needs to be installed properly in your machine.
 - psutil
 
 For installing the packages use `pip install` command.
+
 ## How to use
 ### Step 1: Prepare Dataset
 The required number of **images** (atleast 10) for each students should be collected and stored in seperate folders. The folders should be named in the respective students name. The path to folders can be `Root_folder/attendance/facenet/dataset/raw/`
@@ -60,14 +61,14 @@ Now run the Web application by `$ python run.py` It will show a localhost addres
 
 ### Step 6: Storing Data
 While running the application, it redirects to the Home page. On that page, there is an **Add class details** hyperlink. Basically it asks the user to enter the student's details. The provided details are stored in the **Sqlite Database**.
-> Note: The **Name** of each students entered should be the same as the **name of the student's dataset** created in **step 1**. 
+> **Note:** The **Name** of each students entered should be the same as the **name of the student's dataset** created in **step 1**. 
 
 ### Step 7: Uploading Image
 On pressing the **Take Attendance** hyperlink, it redirects you to a page where the user needs to upload an image of the classroom.
-> Note: The image should be in a good resolution and also it contains clear faces of all the students.
+> **Note:** The image should be in a good resolution and also it contains the clear faces of all students.
 
 ## Result
-
+After uploading the image it takes sometime to process. You can view the running background details in the command prompt. Then it creates an Excel sheet in the Reports folder which contains the attendance details.
 
 ## References
 - https://github.com/davidsandberg/facenet
