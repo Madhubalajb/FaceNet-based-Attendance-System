@@ -11,6 +11,7 @@ A Web Application in Python for recognizing student's faces in a classroom from 
 ## Prerequisites
 The following things needs to be installed properly in your machine.
 - Tensorflow
+- Python 
 - Flask
 - scipy
 - opencv
